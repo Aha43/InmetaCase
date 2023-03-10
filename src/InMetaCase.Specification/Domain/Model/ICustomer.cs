@@ -1,4 +1,4 @@
-﻿namespace InMetaCase.Specification.Model;
+﻿namespace InMetaCase.Specification.Domain.Model;
 
 public interface ICustomer
 {

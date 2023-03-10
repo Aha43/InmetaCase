@@ -1,4 +1,4 @@
-﻿using InMetaCase.Specification.Model;
+﻿using InMetaCase.Specification.Domain.Model;
 
 namespace InMetaCase.Domain.Model;
 
