@@ -5,6 +5,7 @@
         int Id { get; }
 
         string? Email { get; }
+        string? Phone { get; }
 
         string? Title { get; }
 

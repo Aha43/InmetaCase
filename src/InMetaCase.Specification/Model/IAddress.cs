@@ -11,6 +11,5 @@
         string? Region { get; }
         string? PostalCode { get; }
         string? Country { get; }
-        string? Phone { get; }
     }
 }
