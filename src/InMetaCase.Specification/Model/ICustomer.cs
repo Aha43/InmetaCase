@@ -1,17 +1,16 @@
-﻿namespace InMetaCase.Specification.Model
+﻿namespace InMetaCase.Specification.Model;
+
+public interface ICustomer
 {
-    public interface ICustomer
-    {
-        int Id { get; }
+    int Id { get; }
 
-        string? Email { get; }
-        string? Phone { get; }
+    string? Email { get; }
+    string? Phone { get; }
 
-        string? Title { get; }
+    string? Title { get; }
 
-        string? FirstName { get; }
-        string? LastName { get; }
+    string? FirstName { get; }
+    string? LastName { get; }
 
-        int AddressId { get; }
-    }
+    int AddressId { get; }
 }
