@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{47C6F70F-1ED
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMetaCase.Domain", "src\InMetaCase.Domain\InMetaCase.Domain.csproj", "{4446DF2A-58C1-41D3-AEF7-E6B10F5EFE51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMetaCase.Specification", "src\InMetaCase.Specification\InMetaCase.Specification.csproj", "{7374078C-99AC-4F87-8EB8-197C0329D4BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +22,13 @@ Global
 		{4446DF2A-58C1-41D3-AEF7-E6B10F5EFE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4446DF2A-58C1-41D3-AEF7-E6B10F5EFE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4446DF2A-58C1-41D3-AEF7-E6B10F5EFE51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7374078C-99AC-4F87-8EB8-197C0329D4BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7374078C-99AC-4F87-8EB8-197C0329D4BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7374078C-99AC-4F87-8EB8-197C0329D4BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7374078C-99AC-4F87-8EB8-197C0329D4BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4446DF2A-58C1-41D3-AEF7-E6B10F5EFE51} = {47C6F70F-1ED5-462C-A734-1FC2C0E2B8E3}
+		{7374078C-99AC-4F87-8EB8-197C0329D4BA} = {47C6F70F-1ED5-462C-A734-1FC2C0E2B8E3}
 	EndGlobalSection
 EndGlobal
