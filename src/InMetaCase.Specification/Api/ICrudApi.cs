@@ -1,4 +1,4 @@
-﻿namespace InMetaCase.Specification.Domain.Api
+﻿namespace InMetaCase.Specification.Api
 {
     public interface ICrudApi<T> where T : class
     {
