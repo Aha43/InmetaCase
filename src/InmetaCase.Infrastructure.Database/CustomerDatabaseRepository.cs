@@ -17,7 +17,7 @@ public class CustomerDatabaseRepository : ICustomerApi
     private readonly DataContext _dataContext;
 
     public CustomerDatabaseRepository(
-        ILogger logger, 
+        ILogger<CustomerDatabaseRepository> logger, 
         DataContext dataContext)
     {
         _logger = logger;

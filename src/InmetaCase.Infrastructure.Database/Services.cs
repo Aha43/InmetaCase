@@ -11,6 +11,7 @@ public static class Services
         return services.AddSingleton(configuration)
             .AddSingleton<DataContext>()
             .AddSingleton<IAddressApi, AddressDatabaseRepository>()
+            .AddSingleton<IOrderApi, OrderDatabaseRepository>()
             .AddSingleton<ICustomerApi, CustomerDatabaseRepository>();
     }
 }

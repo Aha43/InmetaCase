@@ -12,7 +12,7 @@ public class OrderDatabaseRepository : IOrderApi
     private readonly DataContext _dataContext;
 
     public OrderDatabaseRepository(
-        ILogger logger, 
+        ILogger<OrderDatabaseRepository> logger, 
         DataContext dataContext)
     {
         _logger = logger;
