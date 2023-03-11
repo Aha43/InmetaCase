@@ -56,7 +56,17 @@ public class AddressDatabaseRepository : IAddressApi
         {
             if (!param.Equals(updated))
             {
-                updated = param;
+                updated.StreetNumber = param.StreetNumber;
+                updated.City = param.City;
+                updated.Country = param.Country;
+                updated.StreetName = param.StreetName;
+                updated.PostalCode = param.PostalCode;
+                updated.BuildingName = param.BuildingName;
+                updated.Direction = param.Direction;
+                updated.Region = param.Region;
+                updated.StreetType = param.StreetType;
+                
+
                 await _dataContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
             }
         }

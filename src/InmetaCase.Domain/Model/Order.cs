@@ -1,6 +1,6 @@
 ﻿namespace InmetaCase.Domain.Model;
 
-public class Order
+public record class Order
 {
     public int Id { get; set; }
     public int CustomerId { get; set; }

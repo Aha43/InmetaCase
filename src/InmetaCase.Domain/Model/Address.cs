@@ -1,6 +1,6 @@
 ﻿namespace InmetaCase.Domain.Model;
 
-public class Address
+public record class Address
 {
     public int Id { get; set; }
     public string? StreetNumber { get; set; }
