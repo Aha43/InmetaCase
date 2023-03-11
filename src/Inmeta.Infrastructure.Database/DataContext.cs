@@ -21,6 +21,8 @@ namespace Inmeta.Infrastructure.Database
 
 #nullable disable
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
 #nullable enable
 
     }

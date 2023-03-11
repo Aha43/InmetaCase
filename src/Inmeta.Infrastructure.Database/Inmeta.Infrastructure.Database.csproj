@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InmetaCase.Domain\InmetaCase.Domain.csproj" />
+    <ProjectReference Include="..\InmetaCase.Specification\InmetaCase.Specification.csproj" />
   </ItemGroup>
 
 </Project>
