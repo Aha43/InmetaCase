@@ -1,8 +1,6 @@
-﻿using InMetaCase.Specification.Domain.Model;
+﻿namespace InMetaCase.Domain.Model;
 
-namespace InMetaCase.Domain.Model;
-
-public class Address : IAddress
+public class Address
 {
     public string? StreetNumber { get; set; }
     public string? BuildingName { get; set; }

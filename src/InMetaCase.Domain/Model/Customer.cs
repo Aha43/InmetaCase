@@ -1,8 +1,6 @@
-﻿using InMetaCase.Specification.Domain.Model;
+﻿namespace InMetaCase.Domain.Model;
 
-namespace InMetaCase.Domain.Model;
-
-public record class Customer : ICustomer
+public record class Customer
 {
     public int Id { get; set; }
     public string? Email { get; set; }

@@ -1,8 +1,6 @@
-﻿using InMetaCase.Specification.Domain.Model;
+﻿namespace InMetaCase.Domain.Model;
 
-namespace InMetaCase.Domain.Model;
-
-public class Order : IOrder
+public class Order
 {
     public int Id { get; set; }
     public int CustomerId { get; set; }
