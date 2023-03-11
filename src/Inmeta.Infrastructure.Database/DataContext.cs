@@ -19,7 +19,9 @@ namespace Inmeta.Infrastructure.Database
             options.UseSqlServer(Configuration.GetConnectionString("WebApiDatabase"));
         }
 
+#nullable disable
         public DbSet<Address> Addresses { get; set; }
+#nullable enable
 
     }
 
