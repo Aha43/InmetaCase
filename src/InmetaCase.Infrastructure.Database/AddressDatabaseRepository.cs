@@ -22,17 +22,17 @@ public class AddressDatabaseRepository : IAddressApi
     public async Task<Address> CreateAsync(Address param, CancellationToken cancellationToken)
     {
         var created = param; // rely on being record type
-        _dataContext.Addresses.Add(created);
+        _dataContext.Address.Add(created);
         await _dataContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         return created;
     }
 
     public async Task<Address?> DeleteAsync(int param, CancellationToken cancellationToken)
     {
-        var retVal = _dataContext.Addresses.Where(e => e.Id == param).FirstOrDefault();
+        var retVal = _dataContext.Address.Where(e => e.Id == param).FirstOrDefault();
         if (retVal != null)
         {
-            _dataContext.Addresses.Remove(retVal);
+            _dataContext.Address.Remove(retVal);
             await _dataContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 
@@ -43,15 +43,15 @@ public class AddressDatabaseRepository : IAddressApi
     {
         if (param == null)
         {
-            return await _dataContext.Addresses.ToListAsync(cancellationToken).ConfigureAwait(false);
+            return await _dataContext.Address.ToListAsync(cancellationToken).ConfigureAwait(false);
         }
 
-        return await _dataContext.Addresses.Where(e => e.Id == param).ToListAsync(cancellationToken).ConfigureAwait(false);
+        return await _dataContext.Address.Where(e => e.Id == param).ToListAsync(cancellationToken).ConfigureAwait(false);
     }
 
     public async Task<Address?> UpdateAsync(Address param, CancellationToken cancellationToken)
     {
-        var updated = _dataContext.Addresses.Where(e => e.Id == param.Id).FirstOrDefault();
+        var updated = _dataContext.Address.Where(e => e.Id == param.Id).FirstOrDefault();
         if (updated != null)
         {
             if (!param.Equals(updated))

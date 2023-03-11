@@ -11,18 +11,20 @@ public class DataContext : DbContext
     public DataContext(IConfiguration configuration)
     {
         Configuration = configuration;
+        var cs = Configuration.GetConnectionString("InmetaCaseDb");
+        Database.SetConnectionString(cs);
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        // connect to sql server with connection string from app settings
-        options.UseSqlServer(Configuration.GetConnectionString("InmetaCaseDatabase"));
+        var cs = Configuration.GetConnectionString("InmetaCaseDb");
+        options.UseSqlServer(cs);
     }
 
 #nullable disable
-    public DbSet<Address> Addresses { get; set; }
-    public DbSet<Customer> Customers { get; set; }
-    public DbSet<Order> Orders { get; set; }
+    public DbSet<Address> Address { get; set; }
+    public DbSet<Customer> Customer { get; set; }
+    public DbSet<Order> Order { get; set; }
 #nullable enable
 
 }
