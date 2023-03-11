@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InmetaCase.Domain", "src\In
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InmetaCase.Specification", "src\InmetaCase.Specification\InmetaCase.Specification.csproj", "{7374078C-99AC-4F87-8EB8-197C0329D4BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inmeta.Infrastructure.Database", "src\Inmeta.Infrastructure.Database\Inmeta.Infrastructure.Database.csproj", "{CB5381FE-3141-49FF-B0D1-F46D7ECAA4C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{7374078C-99AC-4F87-8EB8-197C0329D4BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7374078C-99AC-4F87-8EB8-197C0329D4BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7374078C-99AC-4F87-8EB8-197C0329D4BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB5381FE-3141-49FF-B0D1-F46D7ECAA4C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB5381FE-3141-49FF-B0D1-F46D7ECAA4C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB5381FE-3141-49FF-B0D1-F46D7ECAA4C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB5381FE-3141-49FF-B0D1-F46D7ECAA4C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4446DF2A-58C1-41D3-AEF7-E6B10F5EFE51} = {47C6F70F-1ED5-462C-A734-1FC2C0E2B8E3}
 		{7374078C-99AC-4F87-8EB8-197C0329D4BA} = {47C6F70F-1ED5-462C-A734-1FC2C0E2B8E3}
+		{CB5381FE-3141-49FF-B0D1-F46D7ECAA4C5} = {47C6F70F-1ED5-462C-A734-1FC2C0E2B8E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EFD6FFDC-43CD-414B-BEF1-0102CB5D40E4}
