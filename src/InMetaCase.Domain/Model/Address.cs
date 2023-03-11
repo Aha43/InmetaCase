@@ -1,4 +1,4 @@
-﻿namespace InMetaCase.Domain.Model;
+﻿namespace InmetaCase.Domain.Model;
 
 public class Address
 {

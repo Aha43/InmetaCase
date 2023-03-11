@@ -1,8 +1,7 @@
-﻿using InMetaCase.Domain.Model;
+﻿using InmetaCase.Domain.Model;
 
-namespace InMetaCase.Specification.Api
+namespace InmetaCase.Specification.Api;
+
+public interface IAddressApi : ICrudApi<Address, Address, int?, Address, int>
 {
-    public interface IAddressApi : ICrudApi<Address, Address, int?, Address, int>
-    {
-    }
 }
