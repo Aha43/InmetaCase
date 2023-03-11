@@ -5,11 +5,18 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 	<WarningsAsErrors>Nullable</WarningsAsErrors>
+	<UserSecretsId>f1342dbe-a886-42bf-9aed-9a005e5948d1</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InmetaCase.Domain\InmetaCase.Domain.csproj" />
+    <ProjectReference Include="..\InmetaCase.Infrastructure.Database\InmetaCase.Infrastructure.Database.csproj" />
+    <ProjectReference Include="..\InmetaCase.Specification\InmetaCase.Specification.csproj" />
   </ItemGroup>
 
 </Project>
