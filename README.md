@@ -1,3 +1,3 @@
 # InmetaCase
 
-Case done for applying for a job at Inmeta.
+Case done applying for a job at Inmeta.
