@@ -11,6 +11,16 @@
         <MudExpansionPanel Text="Address" IsInitiallyExpanded=false>
             <AddressComponent Address="ViewControl.Address" OnSave="ViewControl.SaveAddress"/>
         </MudExpansionPanel>
+        <MudExpansionPanel Text="Orders">
+            <MudList>
+                @foreach(var order in ViewControl.Orders)
+                {
+                    <MudListItem>
+                        <MudLink Href="/">@order.Id</MudLink>
+                    </MudListItem>
+                }
+            </MudList>
+        </MudExpansionPanel>
     </MudExpansionPanels>
     
 </MudStack>

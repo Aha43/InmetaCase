@@ -66,4 +66,9 @@ public class OrderDatabaseRepository : IOrderApi
         return updated;
     }
 
+    public async Task<IEnumerable<Order>> Search(OrderSearchParam param, CancellationToken cancellationToken)
+    {
+        return await _dataContext.Order.Where(e => e.CustomerId == param.CustomerId).ToListAsync(cancellationToken).ConfigureAwait(false);
+    }
+
 }

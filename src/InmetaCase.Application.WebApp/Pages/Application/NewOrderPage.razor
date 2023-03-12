@@ -12,10 +12,10 @@
             <AddressComponent Address="ViewControl.CustomerAddress"/>
         </MudExpansionPanel>
         <MudExpansionPanel Text="Order">
-            <OrderConponent Order="ViewControl.Order"/>
+            <OrderConponent Order="ViewControl.Order" OnSaveOrder="ViewControl.SaveOrder"/>
         </MudExpansionPanel>
         <MudExpansionPanel Text="Order address">
-            <AddressComponent Address="ViewControl.OrderAddress"/>
+            <AddressComponent Address="ViewControl.OrderAddress" OnSave="ViewControl.SaveOrderAddress"/>
         </MudExpansionPanel>
     </MudExpansionPanels>
 </MudStack>

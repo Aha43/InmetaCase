@@ -48,6 +48,13 @@ namespace InmetaCase.Business.ViewControl
                 {
                     CustomerAddress = customerAddress;
                 }
+
+                Order = new()
+                {
+                    CustomerId = customer.Id,
+                    OrderDate = DateTime.Now,
+                    ServiceType = (int)ServiceType.Moving
+                };
             }
         }
 
@@ -76,6 +83,34 @@ namespace InmetaCase.Business.ViewControl
                 if (updated != null)
                 {
                     Customer = updated;
+                }
+            }
+        }
+
+        public async Task SaveOrderAddress(Address address)
+        {
+            if (Order.Id == 0) return;
+
+            if (address.Id == 0)
+            {
+                var created = await _addressApi.CreateAsync(address, default);
+                if (created != null)
+                {
+                    Order.AddressId = created.Id;
+                    var updated = await _orderApi.UpdateAsync(Order, default);
+                    if (updated != null)
+                    {
+                        Order = updated;
+                        OrderAddress = created;
+                    }
+                }
+            }
+            else
+            {
+                var updated = await _addressApi.UpdateAsync(address, default);
+                if (updated != null)
+                {
+                    OrderAddress = updated;
                 }
             }
         }

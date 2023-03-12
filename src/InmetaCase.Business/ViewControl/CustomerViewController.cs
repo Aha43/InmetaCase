@@ -12,6 +12,8 @@ namespace InmetaCase.Business.ViewControl
         public Customer Customer { get; private set; } = new();
         public Address Address { get; private set; } = new();
 
+        public List<Order> Orders { get; private set; } = new();
+
         public CustomerViewController(
             ICustomerApi customerApi,
             IAddressApi addressApi,
@@ -35,7 +37,12 @@ namespace InmetaCase.Business.ViewControl
                 {
                     Address = address; 
                 }
+
+                var searchParam = new OrderSearchParam { CustomerId = customer.Id };
+                var orders = await _orderApi.Search(searchParam, default);
+                Orders = orders.ToList();
             }
+
         }
 
         public async Task SaveAddress(Address address)

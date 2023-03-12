@@ -102,6 +102,11 @@ namespace InmetaCase.Infrastructure.Http
             return await GetAsync($"{param}", cancellationToken).ConfigureAwait(false);
         }
 
+        public Task<IEnumerable<Order>> Search(OrderSearchParam param, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Order?> UpdateAsync(Order param, CancellationToken cancellationToken)
         {
             return await PostAsync(param, cancellationToken).ConfigureAwait(false);
