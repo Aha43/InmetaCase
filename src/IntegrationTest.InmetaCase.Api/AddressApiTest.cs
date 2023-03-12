@@ -12,10 +12,12 @@ public class AddressApiTest
 
     public AddressApiTest(ConfigurationFixure fixure) => _fixure = fixure;
 
-    [Fact]
-    public async Task CrudAddressAsync()
+    [Theory]
+    [InlineData("http")]
+    [InlineData("db")]
+    public async Task CrudAddressAsync(string system)
     {
-        var api = _fixure.ServiceProvider.GetRequiredService<IAddressApi>();
+        var api = _fixure.GetServiceProviderFor(system).GetRequiredService<IAddressApi>();
 
         var address = await AddressShouldBeCreated(api).ConfigureAwait(false);
         address = await AddressShouldBeRead(api, address.Id).ConfigureAwait(false);

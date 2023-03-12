@@ -1,4 +1,5 @@
 ﻿using InmetaCase.Infrastructure.Database;
+using InmetaCase.Infrastructure.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -7,7 +8,7 @@ namespace IntegrationTest.InmetaCase.Api
 {
     public class ConfigurationFixure : IDisposable
     {
-        public IServiceProvider ServiceProvider { get; private set; }
+        private Dictionary<string, ServiceProvider> _serviceProviders = new();
 
         public ConfigurationFixure() 
         {
@@ -16,12 +17,20 @@ namespace IntegrationTest.InmetaCase.Api
                 .AddJsonFile("appsettings.json", true)
                 .Build();
 
-            var services = new ServiceCollection()
+            var dbServices = new ServiceCollection()
                 .AddLogging()
                 .AddInmetaCaseDatabase(configuration);
 
-            ServiceProvider = services.BuildServiceProvider();
+            _serviceProviders.Add("db", dbServices.BuildServiceProvider());
+
+            var httpServices = new ServiceCollection()
+                .AddLogging()
+                .AddInmetaCaseHttpClients(configuration);
+
+            _serviceProviders.Add("http", httpServices.BuildServiceProvider());
         }
+
+        public IServiceProvider GetServiceProviderFor(string system) => _serviceProviders[system];
 
         public void Dispose() { }
 

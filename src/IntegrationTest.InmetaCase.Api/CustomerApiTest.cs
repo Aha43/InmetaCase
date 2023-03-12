@@ -12,10 +12,12 @@ public class CustomerApiTest
 
     public CustomerApiTest(ConfigurationFixure fixure) => _fixure = fixure;
 
-    [Fact]
-    public async Task CrudCustomerAsync()
+    [Theory]
+    [InlineData("db")]
+    [InlineData("http")]
+    public async Task CrudCustomerAsync(string system)
     {
-        var api = _fixure.ServiceProvider.GetRequiredService<ICustomerApi>();
+        var api = _fixure.GetServiceProviderFor(system).GetRequiredService<ICustomerApi>();
 
         var customer = await CustomerShouldBeCreated(api).ConfigureAwait(false);
         customer = await CustomerShouldBeRead(api, customer.Id).ConfigureAwait(false);
@@ -26,7 +28,7 @@ public class CustomerApiTest
     private async Task<Customer> CustomerShouldBeCreated(ICustomerApi api)
     {
         // Act
-        var order = new Customer
+        var customer = new Customer
         {
             AddressId = 10,
             Email = "arne@online.no",
@@ -36,13 +38,13 @@ public class CustomerApiTest
             Title = "Hr",
         };
 
-        var created = await api.CreateAsync(order, default).ConfigureAwait(false);
+        var created = await api.CreateAsync(customer, default).ConfigureAwait(false);
 
         // Assert
         created.Should().NotBeNull();
         created.Id.Should().BeGreaterThan(0);
 
-        var expected = order with { Id = created.Id };
+        var expected = customer with { Id = created.Id };
         created.Should().Be(expected);
 
         return created;

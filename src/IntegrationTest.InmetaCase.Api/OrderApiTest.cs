@@ -12,10 +12,12 @@ public class OrderApiTest
 
     public OrderApiTest(ConfigurationFixure fixure) => _fixure = fixure;
 
-    [Fact]
-    public async Task CrudOrderAsync()
+    [Theory]
+    [InlineData("http")]
+    [InlineData("db")]
+    public async Task CrudOrderAsync(string system)
     {
-        var api = _fixure.ServiceProvider.GetRequiredService<IOrderApi>();
+        var api = _fixure.GetServiceProviderFor(system).GetRequiredService<IOrderApi>();
 
         var order = await OrderShouldBeCreated(api).ConfigureAwait(false);
         order = await OrderShouldBeRead(api, order.Id).ConfigureAwait(false);

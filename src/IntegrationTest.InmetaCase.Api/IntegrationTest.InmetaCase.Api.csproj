@@ -30,6 +30,7 @@
   <ItemGroup>
     <ProjectReference Include="..\InmetaCase.Domain\InmetaCase.Domain.csproj" />
     <ProjectReference Include="..\InmetaCase.Infrastructure.Database\InmetaCase.Infrastructure.Database.csproj" />
+    <ProjectReference Include="..\InmetaCase.Infrastructure.Http\InmetaCase.Infrastructure.Http.csproj" />
     <ProjectReference Include="..\InmetaCase.Specification\InmetaCase.Specification.csproj" />
   </ItemGroup>
 

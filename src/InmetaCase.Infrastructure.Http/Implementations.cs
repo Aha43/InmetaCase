@@ -7,7 +7,7 @@ namespace InmetaCase.Infrastructure.Http
     public class AddressHttpRepository : HttpClientApiBase<Address>, IAddressApi
     {
         public AddressHttpRepository(
-            ILogger logger, 
+            ILogger<AddressHttpRepository> logger, 
             IHttpClientFactory httpClientFactory) : base(logger, httpClientFactory)
         {
         }
@@ -42,7 +42,7 @@ namespace InmetaCase.Infrastructure.Http
     public class CustomerHttpRepository : HttpClientApiBase<Customer>, ICustomerApi
     {
         public CustomerHttpRepository(
-            ILogger logger,
+            ILogger<CustomerHttpRepository> logger,
             IHttpClientFactory httpClientFactory) : base(logger, httpClientFactory)
         {
         }
@@ -77,7 +77,7 @@ namespace InmetaCase.Infrastructure.Http
     public class OrderHttpRepository : HttpClientApiBase<Order>, IOrderApi
     {
         public OrderHttpRepository(
-            ILogger logger,
+            ILogger<OrderHttpRepository> logger,
             IHttpClientFactory httpClientFactory) : base(logger, httpClientFactory)
         {
         }
