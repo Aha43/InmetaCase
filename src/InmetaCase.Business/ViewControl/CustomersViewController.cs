@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace InmetaCase.Business.ViewControl
 {
-    public class CustomersViewControl
+    public class CustomersViewController
     {
         private readonly ILogger _logger;
 
@@ -12,8 +12,8 @@ namespace InmetaCase.Business.ViewControl
 
         public List<Customer> Customers { get; private set; } = new();
 
-        public CustomersViewControl(
-            ILogger<CustomersViewControl> logger,
+        public CustomersViewController(
+            ILogger<CustomersViewController> logger,
             ICustomerApi customerApi)
         {
             _logger = logger;

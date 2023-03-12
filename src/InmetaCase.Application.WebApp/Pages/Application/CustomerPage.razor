@@ -1,8 +1,9 @@
 ﻿@page "/customer/{id:int}"
 @using InmetaCase.Application.WebApp.Pages.Application.Components
+@using InmetaCase.Business;
 
 <MudStack>
-    
+    <MudLink Href="@ViewControl.Customer.NewOrderUri()">New order</MudLink>
     <MudExpansionPanels MultiExpansion="true">
         <MudExpansionPanel Text="Personalia" IsInitiallyExpanded=true>
             <CustomerComponent Customer="ViewControl.Customer" />

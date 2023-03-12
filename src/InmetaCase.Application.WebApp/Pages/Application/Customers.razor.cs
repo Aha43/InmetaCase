@@ -6,7 +6,7 @@ namespace InmetaCase.Application.WebApp.Pages.Application;
 public partial class Customers
 {
 #nullable disable
-    [Inject] private CustomersViewControl ViewControl { get; set; }
+    [Inject] private CustomersViewController ViewControl { get; set; }
 #nullable enable
 
     protected override async Task OnInitializedAsync()

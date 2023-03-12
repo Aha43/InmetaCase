@@ -3,7 +3,7 @@ using InmetaCase.Specification.Api;
 
 namespace InmetaCase.Business.ViewControl
 {
-    public class CustomerViewControl
+    public class CustomerViewController
     {
         private ICustomerApi _customerApi;
         private IAddressApi _addressApi;
@@ -12,7 +12,7 @@ namespace InmetaCase.Business.ViewControl
         public Customer Customer { get; private set; } = new();
         public Address Address { get; private set; } = new();
 
-        public CustomerViewControl(
+        public CustomerViewController(
             ICustomerApi customerApi,
             IAddressApi addressApi,
             IOrderApi orderApi)

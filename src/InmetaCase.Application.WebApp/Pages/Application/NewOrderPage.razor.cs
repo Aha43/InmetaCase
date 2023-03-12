@@ -3,17 +3,17 @@ using Microsoft.AspNetCore.Components;
 
 namespace InmetaCase.Application.WebApp.Pages.Application
 {
-    public partial class CustomerPage
+    public partial class NewOrderPage
     {
 #nullable disable
-        [Inject] private CustomerViewController ViewControl { get; set; }
+        [Inject] private NewOrderViewController ViewControl { get; set; }
 #nullable enable
 
-        [Parameter] public int Id { get; set; }
+        [Parameter] public int UserId { get; set; }
 
         protected override async Task OnParametersSetAsync()
         {
-            await ViewControl.LoadAsync(Id);
+            await ViewControl.Load(UserId);
         }
 
     }

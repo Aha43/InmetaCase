@@ -7,7 +7,7 @@
     </MudStack>
     <MudExpansionPanels>
         <MudExpansionPanel>
-            <AddressComponent Address="Address" />
+            <AddressComponent Address="Address" OnSave="SaveOrderAddress"/>
         </MudExpansionPanel>
     </MudExpansionPanels>
 </MudStack>
@@ -16,4 +16,10 @@
 @code {
     [Parameter] public Order Order { get; set; } = new();
     [Parameter] public Address Address { get; set; } = new();
+
+    public async Task SaveOrder() => await OnSaveOrder.InvokeAsync(Order);
+    public async Task SaveOrderAddress(Address address) => await OnSaveOrderAddress.InvokeAsync(address);
+
+    [Parameter] public EventCallback<Order> OnSaveOrder { get; set; }
+    [Parameter] public EventCallback<Address> OnSaveOrderAddress { get; set; }
 }

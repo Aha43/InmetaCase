@@ -1,0 +1,21 @@
+﻿@page "/neworder/{userid:int}"
+@using InmetaCase.Application.WebApp.Pages.Application.Components
+
+<MudText Typo="Typo.h3">New Order</MudText>
+
+<MudStack>
+    <MudExpansionPanels>
+        <MudExpansionPanel Text="Customer">
+            <CustomerComponent Customer="ViewControl.Customer"/>
+        </MudExpansionPanel>
+        <MudExpansionPanel Text="Customer address">
+            <AddressComponent Address="ViewControl.CustomerAddress"/>
+        </MudExpansionPanel>
+        <MudExpansionPanel Text="Order">
+            <OrderConponent Order="ViewControl.Order"/>
+        </MudExpansionPanel>
+        <MudExpansionPanel Text="Order address">
+            <AddressComponent Address="ViewControl.OrderAddress"/>
+        </MudExpansionPanel>
+    </MudExpansionPanels>
+</MudStack>
