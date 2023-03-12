@@ -7,7 +7,8 @@ namespace InmetaCase.Business
     {
         public static IServiceCollection AddInmetaBusiness(this IServiceCollection services)
         {
-            return services.AddSingleton<CustomersViewControl>();
+            return services.AddSingleton<CustomersViewControl>()
+                .AddSingleton<CustomerViewControl>();
         }
     }
 }

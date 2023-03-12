@@ -1,0 +1,15 @@
+﻿@page "/customer/{id:int}"
+@using InmetaCase.Application.WebApp.Pages.Application.Components
+
+<MudStack>
+    
+    <MudExpansionPanels MultiExpansion="true">
+        <MudExpansionPanel Text="Personalia" IsInitiallyExpanded=true>
+            <CustomerComponent Customer="ViewControl.Customer" />
+        </MudExpansionPanel>
+        <MudExpansionPanel Text="Address" IsInitiallyExpanded=false>
+            <AddressComponent Address="ViewControl.Address" OnSave="ViewControl.SaveAddress"/>
+        </MudExpansionPanel>
+    </MudExpansionPanels>
+    
+</MudStack>

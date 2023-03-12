@@ -54,16 +54,13 @@ public class OrderDatabaseRepository : IOrderApi
         var updated = _dataContext.Order.Where(e => e.Id == param.Id).FirstOrDefault();
         if (updated != null)
         {
-            if (!param.Equals(updated))
-            {
-                updated.OrderDate = param.OrderDate;
-                updated.AddressId = param.AddressId;
-                updated.CustomerId = param.CustomerId;
-                updated.Note = param.Note;
-                updated.ServiceType = param.ServiceType;
+            updated.OrderDate = param.OrderDate;
+            updated.AddressId = param.AddressId;
+            updated.CustomerId = param.CustomerId;
+            updated.Note = param.Note;
+            updated.ServiceType = param.ServiceType;
                 
-                await _dataContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
-            }
+            await _dataContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);   
         }
 
         return updated;

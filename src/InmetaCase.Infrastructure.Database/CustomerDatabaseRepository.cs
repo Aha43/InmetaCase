@@ -2,11 +2,6 @@
 using InmetaCase.Specification.Api;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InmetaCase.Infrastructure.Database;
 
@@ -59,17 +54,14 @@ public class CustomerDatabaseRepository : ICustomerApi
         var updated = _dataContext.Customer.Where(e => e.Id == param.Id).FirstOrDefault();
         if (updated != null)
         {
-            if (!param.Equals(updated))
-            {
-                updated.AddressId = param.AddressId;
-                updated.LastName = param.LastName;
-                updated.FirstName = param.FirstName;
-                updated.Email = param.Email;
-                updated.Phone = param.Phone;
-                updated.Title = param.Title;
+            updated.AddressId = param.AddressId;
+            updated.LastName = param.LastName;
+            updated.FirstName = param.FirstName;
+            updated.Email = param.Email;
+            updated.Phone = param.Phone;
+            updated.Title = param.Title;
 
-                await _dataContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
-            }
+            await _dataContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 
         return updated;

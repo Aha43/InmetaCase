@@ -1,0 +1,14 @@
+﻿@using InmetaCase.Domain.Model;
+
+<MudStack>
+    <MudTextField Label = "Title" @bind-Value="Customer.Title" />
+    <MudTextField Label="First name" @bind-Value="Customer.FirstName" />
+    <MudTextField Label="Last name" @bind-Value="Customer.LastName" />
+    <MudTextField Label="Title" @bind-Value="Customer.Title" />
+    <MudTextField Label="Email" @bind-Value="Customer.Email" />
+    <MudTextField Label="Phone" @bind-Value="Customer.Phone" />
+</MudStack>
+
+@code {
+    [Parameter] public Customer Customer { get; set; } = new();
+}

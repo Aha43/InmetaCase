@@ -54,21 +54,17 @@ public class AddressDatabaseRepository : IAddressApi
         var updated = _dataContext.Address.Where(e => e.Id == param.Id).FirstOrDefault();
         if (updated != null)
         {
-            if (!param.Equals(updated))
-            {
-                updated.StreetNumber = param.StreetNumber;
-                updated.City = param.City;
-                updated.Country = param.Country;
-                updated.StreetName = param.StreetName;
-                updated.PostalCode = param.PostalCode;
-                updated.BuildingName = param.BuildingName;
-                updated.Direction = param.Direction;
-                updated.Region = param.Region;
-                updated.StreetType = param.StreetType;
+            updated.StreetNumber = param.StreetNumber;
+            updated.City = param.City;
+            updated.Country = param.Country;
+            updated.StreetName = param.StreetName;
+            updated.PostalCode = param.PostalCode;
+            updated.BuildingName = param.BuildingName;
+            updated.Direction = param.Direction;
+            updated.Region = param.Region;
+            updated.StreetType = param.StreetType;
                 
-
-                await _dataContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
-            }
+            await _dataContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
         }
 
         return updated;

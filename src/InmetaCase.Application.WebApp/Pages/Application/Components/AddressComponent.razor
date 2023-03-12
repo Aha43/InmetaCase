@@ -1,0 +1,24 @@
+﻿@using InmetaCase.Domain.Model;
+
+<MudStack>
+    <MudTextField Label="Street name" @bind-Value="Address.StreetName" />
+    <MudTextField Label="Street number" @bind-Value="Address.StreetNumber" />
+    <MudTextField Label="Street type" @bind-Value="Address.StreetType" />
+    <MudTextField Label="Street direction" @bind-Value="Address.Direction" />
+    <MudTextField Label="Building name" @bind-Value="Address.BuildingName" />
+    <MudTextField Label="Postal code" @bind-Value="Address.PostalCode" />
+    <MudTextField Label="City" @bind-Value="Address.City" />
+    <MudTextField Label="Region" @bind-Value="Address.Region" />
+    <MudTextField Label="Region" @bind-Value="Address.Country" />
+    <MudButton OnClick="Save">Save</MudButton>
+</MudStack>
+
+@code {
+    [Parameter] public Address Address { get; set; } = new();
+
+    public async Task Save() => await OnSave.InvokeAsync(Address);
+
+    [Parameter] public EventCallback<Address> OnSave { get; set; }
+
+
+}
