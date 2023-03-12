@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InmetaCase.Infrastructure.H
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InmetaCase.Application.WebApp", "src\InmetaCase.Application.WebApp\InmetaCase.Application.WebApp.csproj", "{8A32F032-5E24-456C-A4D9-3F67361E137E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmetaCase.Business", "src\InmetaCase.Business\InmetaCase.Business.csproj", "{366F51F9-0D61-4EC3-876E-DAB8996E280B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InmetaCase.Business", "src\InmetaCase.Business\InmetaCase.Business.csproj", "{366F51F9-0D61-4EC3-876E-DAB8996E280B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

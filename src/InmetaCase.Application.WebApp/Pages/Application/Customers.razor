@@ -1,0 +1,14 @@
+﻿@page "/Customers"
+
+<MudText Typo="Typo.h1">Customers</MudText>
+
+<MudStack>
+    <MudList>
+        @foreach (var customer in ViewControl.Customers)
+        {
+            <MudListItem>
+                <MudLink Href="/">@customer.FirstName</MudLink>
+            </MudListItem>
+        }
+    </MudList>
+</MudStack>
