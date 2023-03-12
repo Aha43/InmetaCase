@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddInmetaCaseDatabase(builder.Configuration);
+builder.Services.AddInmetaCaseDatabaseApi(builder.Configuration);
 
 var app = builder.Build();
 

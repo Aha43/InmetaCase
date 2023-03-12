@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Hosting.StaticWebAssets;
 using InmetaCase.Application.WebApp.Data;
 using MudBlazor.Services;
+using InmetaCase.Infrastructure.Database;
+using InmetaCase.Infrastructure.Http;
+using InmetaCase.Business;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +16,23 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddMudServices();
+
+// Add application services
+var api = builder.Configuration["api"];
+api = (api == null) ? "db" : "http";
+if (api.Equals("db"))
+{
+    builder.Services.AddInmetaCaseDatabaseApi(builder.Configuration);
+}
+else if (api.Equals("http"))
+{
+    builder.Services.AddInmetaCaseHttpClientsApi(builder.Configuration);
+}
+else
+{
+    throw new Exception($"Uknown api '{api}");
+}
+builder.Services.AddInmetaBusiness();
 
 var app = builder.Build();
 

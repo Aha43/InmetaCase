@@ -6,7 +6,7 @@ namespace InmetaCase.Infrastructure.Http
 {
     public static class Services
     {
-        public static IServiceCollection AddInmetaCaseHttpClients(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInmetaCaseHttpClientsApi(this IServiceCollection services, IConfiguration configuration)
         {
             return services.AddHttpClients(configuration)
                 .AddApis();

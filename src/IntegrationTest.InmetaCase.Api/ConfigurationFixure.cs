@@ -19,13 +19,13 @@ namespace IntegrationTest.InmetaCase.Api
 
             var dbServices = new ServiceCollection()
                 .AddLogging()
-                .AddInmetaCaseDatabase(configuration);
+                .AddInmetaCaseDatabaseApi(configuration);
 
             _serviceProviders.Add("db", dbServices.BuildServiceProvider());
 
             var httpServices = new ServiceCollection()
                 .AddLogging()
-                .AddInmetaCaseHttpClients(configuration);
+                .AddInmetaCaseHttpClientsApi(configuration);
 
             _serviceProviders.Add("http", httpServices.BuildServiceProvider());
         }

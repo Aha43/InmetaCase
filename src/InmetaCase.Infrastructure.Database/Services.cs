@@ -6,7 +6,7 @@ namespace InmetaCase.Infrastructure.Database;
 
 public static class Services
 {
-    public static IServiceCollection AddInmetaCaseDatabase(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddInmetaCaseDatabaseApi(this IServiceCollection services, IConfiguration configuration)
     {
         return services.AddSingleton(configuration)
             .AddSingleton<DataContext>()
