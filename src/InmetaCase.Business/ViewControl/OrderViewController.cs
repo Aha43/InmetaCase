@@ -10,7 +10,7 @@ namespace InmetaCase.Business.ViewControl
 
         private readonly IOrderApi _orderApi;
 
-        public Order Order { get; private set; } = new();
+        public Order? Order { get; private set; } = new();
 
         public OrderViewController(
             ILogger<OrderViewController> logger, 
@@ -27,6 +27,15 @@ namespace InmetaCase.Business.ViewControl
             if (order != null)
             {
                 Order = order;
+            }
+        }
+
+        public async Task Delete()
+        {
+            if (Order != null) 
+            {
+                await _orderApi.DeleteAsync(Order.Id, default);
+                Order = null;
             }
         }
 

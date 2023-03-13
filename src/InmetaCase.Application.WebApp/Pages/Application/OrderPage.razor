@@ -10,5 +10,8 @@
 }
 else
 {
-    <OrderComponent Order="ViewController.Order"/>
+    <MudStack>
+        <OrderComponent Order="ViewController.Order" />
+        <MudButton OnClick="ViewController.Delete">Delete</MudButton>
+    </MudStack>
 }
