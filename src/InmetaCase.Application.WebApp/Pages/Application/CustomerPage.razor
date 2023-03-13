@@ -16,7 +16,7 @@
                 @foreach(var order in ViewControl.Orders)
                 {
                     <MudListItem>
-                        <MudLink Href="/">@order.Id</MudLink>
+                        <MudLink Href="@order.PageUri()">@order.Id</MudLink>
                     </MudListItem>
                 }
             </MudList>

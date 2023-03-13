@@ -9,7 +9,8 @@ namespace InmetaCase.Business
         {
             return services.AddSingleton<CustomersViewController>()
                 .AddSingleton<CustomerViewController>()
-                .AddSingleton<NewOrderViewController>();
+                .AddSingleton<NewOrderViewController>()
+                .AddSingleton<OrderViewController>();
         }
     }
 }

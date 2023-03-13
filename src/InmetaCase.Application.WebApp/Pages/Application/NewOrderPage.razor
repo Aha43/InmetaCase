@@ -1,4 +1,5 @@
 ﻿@page "/neworder/{userid:int}"
+
 @using InmetaCase.Application.WebApp.Pages.Application.Components
 
 <MudText Typo="Typo.h3">New Order</MudText>
@@ -12,7 +13,7 @@
             <AddressComponent Address="ViewControl.CustomerAddress"/>
         </MudExpansionPanel>
         <MudExpansionPanel Text="Order">
-            <OrderConponent Order="ViewControl.Order" OnSaveOrder="ViewControl.SaveOrder"/>
+            <OrderComponent Order="ViewControl.Order" OnSaveOrder="ViewControl.SaveOrder"/>
         </MudExpansionPanel>
         <MudExpansionPanel Text="Order address">
             <AddressComponent Address="ViewControl.OrderAddress" OnSave="ViewControl.SaveOrderAddress"/>

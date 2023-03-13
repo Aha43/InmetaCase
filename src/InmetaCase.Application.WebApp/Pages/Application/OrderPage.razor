@@ -1,0 +1,14 @@
+﻿@page "/order/{id:int}"
+
+@using InmetaCase.Application.WebApp.Pages.Application.Components
+
+<MudText Typo="Typo.h3">Order</MudText>
+
+@if (ViewController.Order == null)
+{
+    <MudText Typo="Typo.h1">Order been deleted</MudText>
+}
+else
+{
+    <OrderComponent Order="ViewController.Order"/>
+}
