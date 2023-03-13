@@ -8,7 +8,7 @@
         @foreach (var customer in ViewControl.Customers)
         {
             <MudListItem>
-                <MudLink Href="@customer.PageUri()">@customer.FirstName</MudLink>
+                <MudLink Href="@customer.PageUri()">@customer.Presentation()</MudLink>
             </MudListItem>
         }
     </MudList>
